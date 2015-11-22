@@ -4,6 +4,7 @@ $base_path = str_replace(basename(__FILE__),"",__FILE__);
 $files = scandir($base_path."/"."views");
 foreach($files AS $file) {
 	if(strstr($file,".php")) {
+		//echo str_replace(".php","",basename($_SERVER['REQUEST_URI'])) . "==". str_replace(".php","",$file);
 		if(str_replace(".php","",basename($_SERVER['REQUEST_URI'])) == str_replace(".php","",$file)) {
 			$view = $file;	
 			break;
